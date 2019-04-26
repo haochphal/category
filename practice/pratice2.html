@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>boostrap fileinput</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+<body class="bg-secondary">
+    <br><br>
+    <h1 class="text-center">Bootstrap File Input</h1>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header text-center"><h4>Input File</h4></div>
+            <div class="card-body">
+                <div class="file-loading text-center">
+                     <input id="input-40" name="input40[]" type="file" class="file" multiple>
+                </div>
+                <br>
+                <button type="button" class="btn btn-warning btn-modify text-right">Modify</button>
+            </div>
+        </div>
+    </div>
+    <script>
+    $(document).on('ready', function() {
+        $(".btn-modify").on("click", function() {
+            var $btn = $(this), $input = $("#input-40");
+            if ($btn.text() == "Modify") {
+                $("#input-40").fileinput("disable").fileinput("refresh", {showUpload: false});
+                $btn.html("Revert");
+                alert("Hurray! I have disabled the input and hidden the upload button.");
+            }
+            else {
+                $("#input-40").fileinput("enable").fileinput("refresh", {showUpload: true});
+                $btn.html("Modify");
+                alert("Hurray! I have reverted back the input to enabled with the upload button.");
+            }
+        });
+    });
+    </script>
+</body>
+</html>

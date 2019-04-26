@@ -1,0 +1,45 @@
+
+@media(orientation:landscape){
+
+    body{
+        background: palevioletred;
+        
+    }
+    .hide-on-landscape {
+        display: none;
+    }
+    
+}
+@media(orientation:portrait){
+    body{
+        background: rgb(15, 199, 46);
+
+    }
+    .hide-on-portrait {
+        display: none;
+    }
+}
+@media(min-width:300px){
+    body{
+       color:red;
+
+    }
+}
+@media(min-width:400px){
+    body{
+       color:green;
+
+    }
+}
+@media(min-width:600px){
+    body{
+       color:blue;
+
+    }
+}
+@media(min-width:800px){
+    body{
+       color:pink;
+
+    }
+}
